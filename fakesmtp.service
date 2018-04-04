@@ -1,0 +1,9 @@
+[Unit]
+Description=Fake SMTP
+
+[Service]
+Type=forking
+ExecStart=/bin/java -jar /opt/smtp-helpers/fakesmtp.jar -s -b -p 2525 -b 127.0.0.1 -o /var/www/html/temp/fsmtp_mails
+
+[Install]
+WantedBy=multi-user.target
